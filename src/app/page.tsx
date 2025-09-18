@@ -1,103 +1,70 @@
-import Image from "next/image";
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen bg-[#f6fcfc]">
+      <header className="sticky top-0 bg-white/90 backdrop-blur border-b">
+        <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="inline-block h-8 w-8 rounded bg-[#0071bd]"></span>
+            <span className="font-semibold text-[#224563]">LORDS Faculty Appraisal</span>
+          </div>
+          <nav className="hidden sm:flex items-center gap-6 text-sm text-[#224563]">
+            <Link href="#features" className="hover:text-[#0071bd]">Features</Link>
+            <Link href="#security" className="hover:text-[#0071bd]">Security</Link>
+            <Link href="#contact" className="hover:text-[#0071bd]">Contact</Link>
+          </nav>
+          <div className="flex items-center gap-3">
+            <Link href="/login" className="text-[#0071bd]">Sign in</Link>
+            <Link href="/login" className="bg-[#0071bd] text-white px-3 py-2 rounded">Go to App</Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      <section className="mx-auto max-w-6xl px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#224563] leading-tight">
+            Streamlined Faculty Appraisals for LORDS Institute
+          </h1>
+          <p className="mt-4 text-[#224563]/80">
+            Secure, role-based workflows for Faculty, HOD, and Principal with real-time analytics.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/login" className="bg-[#0071bd] text-white px-5 py-3 rounded">Get Started</Link>
+            <a href="#features" className="px-5 py-3 rounded border border-[#0071bd] text-[#0071bd]">Learn More</a>
+          </div>
+        </div>
+        <div className="bg-white rounded shadow p-6">
+          <ul className="space-y-3 text-[#224563]">
+            <li>• Secure JWT authentication</li>
+            <li>• Departmental HOD management</li>
+            <li>• Multi-phase self-appraisal with file uploads</li>
+            <li>• HOD performance evaluation and Principal remarks</li>
+            <li>• Clean analytics and year-wise filters</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="features" className="bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-16 grid md:grid-cols-3 gap-8">
+          {[
+            ['Role-based Access', 'Separate portals for Faculty, HOD, and Principal.'],
+            ['Atomic Submissions', 'Reliable, consistent saves with validations.'],
+            ['Secure Uploads', 'Cloud uploads with size validation.'],
+          ].map(([title, desc]) => (
+            <div key={title} className="rounded border p-6">
+              <h3 className="font-semibold text-[#224563]">{title}</h3>
+              <p className="text-[#224563]/80 mt-2 text-sm">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <footer id="contact" className="border-t bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-[#224563]/80">
+          © {new Date().getFullYear()} LORDS Institute. All rights reserved.
+        </div>
       </footer>
-    </div>
+    </main>
   );
 }
